@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "WeirdFoodCombosFrontend", "WeirdFoodCombosFrontend\WeirdFoodCombosFrontend.esproj", "{2CEB9CFF-B62F-49C2-9B1B-B500B139FCC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeirdFoodCombosBackend", "WeirdFoodCombosBackend\WeirdFoodCombosBackend.csproj", "{207624C8-F042-40D8-9610-5942D085EC2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CEB9CFF-B62F-49C2-9B1B-B500B139FCC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CEB9CFF-B62F-49C2-9B1B-B500B139FCC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CEB9CFF-B62F-49C2-9B1B-B500B139FCC6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2CEB9CFF-B62F-49C2-9B1B-B500B139FCC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CEB9CFF-B62F-49C2-9B1B-B500B139FCC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CEB9CFF-B62F-49C2-9B1B-B500B139FCC6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{207624C8-F042-40D8-9610-5942D085EC2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{207624C8-F042-40D8-9610-5942D085EC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{207624C8-F042-40D8-9610-5942D085EC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{207624C8-F042-40D8-9610-5942D085EC2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4418D7B5-2933-4B7F-9FC6-C6B6B3CA8939}
+	EndGlobalSection
+EndGlobal
