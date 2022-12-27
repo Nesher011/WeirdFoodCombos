@@ -1,3 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
+using WeirdFoodCombosBackend.Databases;
+using WeirdFoodCombosBackend.Interfaces;
+using WeirdFoodCombosBackend.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddDbContext<WeirdFoodCombosContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddTransient<IRecipeRepository, RecipeRepository>();
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
