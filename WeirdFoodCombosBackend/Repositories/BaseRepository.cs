@@ -13,6 +13,7 @@ namespace WeirdFoodCombosBackend.Repositories
         private readonly IMapper _mapper;
 
         public DbSet<T> table;
+
         public BaseRepository(WeirdFoodCombosContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
@@ -21,20 +22,35 @@ namespace WeirdFoodCombosBackend.Repositories
             table = dbContext.Set<T>();
         }
 
-        public async Task<TDto> Create(TDto entityDto)
+        public async Task<TDto> Create(TDto tDto)
         {
+            //null entity exception
+            if (tDto == null)
+                throw new NotImplementedException();
+
+            var entity = await table.FirstOrDefaultAsync(e => e.Id == tDto.Id);
+
+            //entity exists exception
+            if (entity != null)
+                throw new NotImplementedException();
+
             var dbEntity = new T();
 
-            _mapper.Map(entityDto, dbEntity);
+            _mapper.Map(tDto, dbEntity);
             await table.AddAsync(dbEntity);
             await _dbContext.SaveChangesAsync();
 
             return _mapper.Map<TDto>(dbEntity);
         }
 
-        public Task Delete(Guid guid)
+        public async Task Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var entity = await table.FirstOrDefaultAsync(e => e.Id == id);
+            if (entity != null)
+            {
+                table.Remove(entity);
+                await _dbContext.SaveChangesAsync();
+            }
         }
 
         public async Task<List<TDto>> GetAll()
@@ -42,14 +58,26 @@ namespace WeirdFoodCombosBackend.Repositories
             return _mapper.Map<List<TDto>>(await table.ToListAsync());
         }
 
-        public Task<TDto> GetById(Guid guid)
+        public async Task<TDto> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return _mapper.Map<TDto>(await table.FirstOrDefaultAsync(e => e.Id == id));
         }
 
-        public Task<TDto> Update(TDto tDto)
+        public async Task<TDto> Update(TDto tDto)
         {
-            throw new NotImplementedException();
+            //null entity exception
+            if (tDto == null)
+                throw new NotImplementedException();
+
+            var entity = await table.FirstOrDefaultAsync(e => e.Id == tDto.Id);
+
+            //null entity exception
+            if (entity == null)
+                throw new NotImplementedException();
+
+            _mapper.Map(tDto, entity);
+            await _dbContext.SaveChangesAsync();
+            return _mapper.Map<TDto>(entity);
         }
     }
 }
