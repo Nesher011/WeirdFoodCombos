@@ -53,7 +53,7 @@ namespace WeirdFoodCombosBackend.Repositories
             }
         }
 
-        public async Task<List<TDto>> GetAll()
+        public virtual async Task<List<TDto>> GetAll()
         {
             return _mapper.Map<List<TDto>>(await table.ToListAsync());
         }
