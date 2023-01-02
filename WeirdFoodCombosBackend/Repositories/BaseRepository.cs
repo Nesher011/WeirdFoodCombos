@@ -43,7 +43,7 @@ namespace WeirdFoodCombosBackend.Repositories
             return _mapper.Map<TDto>(dbEntity);
         }
 
-        public async Task Delete(Guid id)
+        public virtual async Task Delete(Guid id)
         {
             var entity = await table.FirstOrDefaultAsync(e => e.Id == id);
             if (entity != null)

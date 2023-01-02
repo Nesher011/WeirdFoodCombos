@@ -12,6 +12,9 @@ namespace WeirdFoodCombosBackend.Repositories
         private readonly WeirdFoodCombosContext _dbContext;
         private readonly IMapper _mapper;
 
+        public DbSet<Ingredient> ingredientsTable;
+        public DbSet<Step> stepsTable;
+
         public RecipeRepository(WeirdFoodCombosContext dbContext, IMapper mapper) : base(dbContext, mapper)
         {
             _dbContext = dbContext;
@@ -24,6 +27,17 @@ namespace WeirdFoodCombosBackend.Repositories
                 .Include(e => e.Ingredients)
                 .Include(e => e.Steps)
                 .ToListAsync());
+        }
+
+        public override async Task Delete(Guid id)
+        {
+            var entity = await table.Include(e => e.Ingredients)
+                .Include(e => e.Steps).FirstOrDefaultAsync(e => e.Id == id);
+            if (entity != null)
+            {
+                table.Remove(entity);
+            }
+            await _dbContext.SaveChangesAsync();
         }
     }
 }
