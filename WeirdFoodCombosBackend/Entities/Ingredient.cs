@@ -2,6 +2,8 @@
 {
     public class Ingredient : BaseEntity
     {
-        public string Name { get; set; } = null!;
+        public string Name { get; set; }
+        public Guid RecipeId { get; set; }
+        public Recipe Recipe { get; set; } = null!;
     }
 }

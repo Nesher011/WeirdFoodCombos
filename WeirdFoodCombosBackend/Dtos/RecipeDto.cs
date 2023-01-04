@@ -15,9 +15,7 @@ namespace WeirdFoodCombosBackend.Dtos
         public string Description { get; set; }
         public Guid OwnerId { get; set; }
         public DateTime Created { get; set; }
-        public Guid IngredientsId { get; set; }
         public List<Ingredient>? Ingredients { get; set; }
-        public Guid StepsId { get; set; }
         public List<Step>? Steps { get; set; }
     }
 }
