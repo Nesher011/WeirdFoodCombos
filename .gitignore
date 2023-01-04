@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/WeirdFoodCombosBackend/Migrations/WeirdFoodCombosContextModelSnapshot.cs
+/WeirdFoodCombosBackend/Migrations/20230104231735_InitialMigration.Designer.cs
+/WeirdFoodCombosBackend/Migrations/20230104231735_InitialMigration.cs
