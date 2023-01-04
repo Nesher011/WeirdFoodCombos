@@ -12,15 +12,14 @@ namespace WeirdFoodCombosBackend.Databases
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<Ingredient>()
-                .HasOne(e => e.Recipe)
-                .WithMany(e => e.Ingredients)
-                .HasForeignKey(e => e.RecipeId);
+                .HasKey(e => new { e.Id, e.RecipeId });
             modelBuilder.Entity<Step>()
-                .HasOne(e => e.Recipe)
-                .WithMany(e => e.Steps)
-                .HasForeignKey(e => e.RecipeId);
+                .HasKey(e => new { e.Id, e.RecipeId });
+            modelBuilder.Entity<Recipe>()
+                .Property(p => p.RecipeImage).HasColumnType("image");
             base.OnModelCreating(modelBuilder);
         }
     }
