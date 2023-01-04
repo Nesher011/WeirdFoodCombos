@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+using WeirdFoodCombosBackend.Services;
 
 namespace WeirdFoodCombosBackend.Entities
 {
@@ -16,5 +18,6 @@ namespace WeirdFoodCombosBackend.Entities
         public DateTime Created { get; set; }
         public List<Ingredient>? Ingredients { get; set; }
         public List<Step>? Steps { get; set; }
+        public byte[] RecipeImage { get; set; }
     }
 }
