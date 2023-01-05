@@ -1,6 +1,4 @@
-﻿using WeirdFoodCombosBackend.Entities;
-
-namespace WeirdFoodCombosBackend.Dtos
+﻿namespace WeirdFoodCombosBackend.Dtos
 {
     public class StepDto : BaseDto
     {

@@ -2,7 +2,6 @@
 using WeirdFoodCombosBackend.Dtos;
 using WeirdFoodCombosBackend.Entities;
 using WeirdFoodCombosBackend.Interfaces;
-using WeirdFoodCombosBackend.Repositories;
 
 namespace WeirdFoodCombosBackend.Controllers
 {

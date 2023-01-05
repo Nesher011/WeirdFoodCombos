@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WeirdFoodCombosBackend.Entities;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace WeirdFoodCombosBackend.Databases
 {
