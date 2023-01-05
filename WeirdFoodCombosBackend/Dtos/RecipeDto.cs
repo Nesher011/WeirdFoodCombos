@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using WeirdFoodCombosBackend.Entities;
 
 namespace WeirdFoodCombosBackend.Dtos
@@ -17,6 +18,10 @@ namespace WeirdFoodCombosBackend.Dtos
         public DateTime Created { get; set; }
         public List<Ingredient>? Ingredients { get; set; }
         public List<Step>? Steps { get; set; }
-        public byte[] RecipeImage { get; set; }
+
+        [NotMapped]
+        public IFormFile? Image { get; set; }
+
+        public string ImagePath { get; set; }
     }
 }
