@@ -17,8 +17,6 @@ namespace WeirdFoodCombosBackend.Databases
                 .HasKey(e => new { e.Id, e.RecipeId });
             modelBuilder.Entity<Step>()
                 .HasKey(e => new { e.Id, e.RecipeId });
-            modelBuilder.Entity<Recipe>()
-                .Property(p => p.RecipeImage).HasColumnType("image");
             base.OnModelCreating(modelBuilder);
         }
     }
