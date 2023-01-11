@@ -1,12 +1,50 @@
+<article class="container">
+  <section class="create" *ngIf="!isCreate">
+    <h1>Create Recipe</h1>
+    <form>
+      <div class="mb-3">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name"
+               placeholder="Enter recipe name" [(ngModel)]="name">
+      </div>
+      <div class="mb-3">
+        <label for="difficulty">Difficulty</label>
+        <input type="number" class="form-control" id="difficulty" name="difficulty"
+               placeholder="Enter recipe difficulty" [(ngModel)]="difficulty">
+      </div>
+      <div class="row">
+        <div class="offset-md-5 col-md-2">
+          <button type="button" class="btn btn-primary" (click)="onCreate()">Create </button>
+        </div>
+      </div>
+    </form>
+  </section>
 
-  <span routerLink="/recipes" class="title">Weird Food Combos</span>
-  <dt></dt>
-
-
-    <button class="link-button"
-            routerLink="/recipes"
-            mat-button
-            routerLinkActive="active">
-      Recipes
-    </button>
-
+  <section class="recipes" *ngIf="isCreate">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Difficulty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let recipe of recipes">
+          <td>{{recipe.name}}</td>
+          <td>{{recipe.difficulty}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <app-upload></app-upload>
+    <div class="row">
+      <div class="offset-md-5 col-md-2">
+        <button type="button" class="btn btn-primary" (click)="onCreate()">Create </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="offset-md-10 col-md-2">
+        <button type="button" class="btn btn-primary" (click)="returnToCreate()">New Recipe</button>
+      </div>
+    </div>
+  </section>
+</article>
