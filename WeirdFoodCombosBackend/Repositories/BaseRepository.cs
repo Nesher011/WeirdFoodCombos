@@ -22,7 +22,7 @@ namespace WeirdFoodCombosBackend.Repositories
             table = dbContext.Set<T>();
         }
 
-        public async Task<TDto> Create(TDto tDto)
+        public virtual async Task<TDto> Create(TDto tDto)
         {
             //null entity exception
             if (tDto == null)
