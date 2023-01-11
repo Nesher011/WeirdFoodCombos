@@ -3,7 +3,7 @@ using WeirdFoodCombosBackend.Entities;
 
 namespace WeirdFoodCombosBackend.Interfaces
 {
-    public interface IRecipeRepository:IBaseRepository<Recipe,RecipeDto>
+    public interface IRecipeRepository : IBaseRepository<Recipe, RecipeDto>
     {
     }
 }
