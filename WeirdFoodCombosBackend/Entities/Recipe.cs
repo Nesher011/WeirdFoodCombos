@@ -17,10 +17,6 @@ namespace WeirdFoodCombosBackend.Entities
         public DateTime Created { get; set; }
         public List<Ingredient>? Ingredients { get; set; }
         public List<Step>? Steps { get; set; }
-
-        [NotMapped]
-        public IFormFile? Image { get; set; }
-
-        public string ImagePath { get; set; }
+        public string? ImagePath { get; set; }
     }
 }
