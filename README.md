@@ -13,4 +13,5 @@ A web application that allows users to discover and share unusual food combinati
 - Communication with backend: RESTful API
 
 ## Development
-The project is currently under development and contributions are welcome.
+Backend is finished.
+Frontend is currently developed.
